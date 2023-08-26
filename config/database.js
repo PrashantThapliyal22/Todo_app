@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 require("dotenv").config();
 
 const dbConnect = () => {
@@ -7,13 +8,13 @@ const dbConnect = () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
-
-    .then(() => console.log("DB connection Successfully"))
+    .then(() => console.log("DB ka Connection is Successful"))
     .catch((error) => {
-      console.log("Issue in MongoDB");
+      console.log("Issue in DB Connection");
       console.error(error.message);
-
+      //iska matlab kya h ?
       process.exit(1);
     });
 };
-module.exports;
+
+module.exports = dbConnect;
